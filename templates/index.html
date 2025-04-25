@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Rock Paper Scissors</h1>
+        <form method="POST">
+            <label><b></b>Choose Your Move:</b></label><br>
+            <button type="submit" name="choice" value="s">🪨 Stone</button>
+            <button type="submit" name="choice" value="p">📄 Paper</button>
+            <button type="submit" name="choice" value="c">✂️ Scissor</button>
+        </form>
+
+        {% if result %}
+            <div class="result">
+                <p><strong>You Chose:</strong> {{ you_choice }}</p>
+                <p><strong>Computer Chose:</strong> {{ computer_choice }}</p>
+                <h2>{{ result }}</h2>
+                <a href="/" class="play-again">🔄 Play Again</a>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
